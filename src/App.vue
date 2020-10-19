@@ -86,7 +86,7 @@ setResults(results){
   font-family: "Roboto", sans-serif;
 }
 #app {
-  min-height: 100vh;
+  height: 100vh;
   background-image: url("./assets/img/warm-bg.jpg");
   background-size: cover;
   background-position: center;
@@ -100,7 +100,7 @@ setResults(results){
   display: flex;
   justify-content: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
-   min-height: 100vh;
+  height: 100%;
   width: 100%;
 
   .items-container {
@@ -112,7 +112,7 @@ setResults(results){
   display: flex;
   justify-content: center;
   input {
-    padding: 10px 0;
+    padding: 10px;
     width: 500px;
     font-size: 20px;
 
@@ -182,7 +182,7 @@ setResults(results){
 @media screen and (max-width: 700px) {
   .search-box {
   input {
-  width: 90vw;
+  width: calc(90vw - 20px);
   }
   }
 }
