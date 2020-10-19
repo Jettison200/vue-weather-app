@@ -8,6 +8,8 @@
             name="country search" 
             v-model="query"
             @keypress="fetchWeather"
+            @keyup.enter="hideKeyboard"
+            
              />
         </div>
         <div class="info-container" v-if="typeof weather.main != 'undefined'">
@@ -31,6 +33,7 @@
 </template>
 
 <script>
+
 export default {
   name: "App",
   components: {},
@@ -45,13 +48,16 @@ export default {
   },
   methods:{
 fetchWeather(e){
-  if(e.key=="Enter"){
+ if(e.key=="Enter"){
     fetch(`${this.base_url}weather?q=${this.query}&units=metric&appid=${this.api_key}`)
     .then(res =>{
       return res.json();
     })
     .then(this.setResults)
   }
+},
+hideKeyboard(){
+  document.activeElement.blur();
 },
 setResults(results){
   this.weather = results;
@@ -66,6 +72,9 @@ setResults(results){
       let year = d.getFullYear();
       return ` ${month} ${date}, (${day}) ${year}`;
     }
+  },
+  mounted(){
+
   }
 };
 </script>
