@@ -86,7 +86,7 @@ setResults(results){
   font-family: "Roboto", sans-serif;
 }
 #app {
-  height: 100vh;
+  min-height: 100vh;
   background-image: url("./assets/img/warm-bg.jpg");
   background-size: cover;
   background-position: center;
@@ -100,7 +100,7 @@ setResults(results){
   display: flex;
   justify-content: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
-  height: 100%;
+   min-height: 100vh;
   width: 100%;
 
   .items-container {
